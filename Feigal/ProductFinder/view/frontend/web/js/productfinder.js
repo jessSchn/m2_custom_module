@@ -24,15 +24,13 @@ define([
                         data: param,
                         type: "POST"
                     }).done(function (data) {
-                        $('.note').html(data);
-                        $('#prod-finder-form').reset();
-                        //$('#produt-results').html(data.output);
+                        $('#produt-results').html(data);
 
                         return true;
                     });
                 }
             });
     };
-    
+
     return main;  
 });

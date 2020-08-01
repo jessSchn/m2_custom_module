@@ -8,15 +8,44 @@
     namespace Feigal\ProductFinder\Block\Index;
      
     use Magento\Framework\View\Element\Template;
+    use Magento\Framework\View\Element\Template\Context;
+    use Magento\Catalog\Model\ResourceModel\Product\CollectionFactory as ProductCollection;
      
     class View extends Template
     {
 
-        /*
-         * Block should receive product collection from controller
-         * Here I should loop through the collection and format the data
-         * Then set this data on the template file
+        
+        protected $product_collection;
+    
+        public function __construct(
+            ProductCollection $product_collection
+            Context $context,
+            array $data = []
+        ) {
+            $this->product_collection = $product_collection;
+            parent::__construct($context, $data);
+        }
+
+        /**
+         * @return $prodcuts
          */
+        public function getProducts()
+        {
+            $data = $this->getRequest()->getParams(); //ajax data
+            try 
+                $products = $this->product_collection->create()
+                            ->addAttributeToFilter('price', [
+                                    ['gteq' => $data['lowprice'], ['lteq' => $data['highprice']]
+                                ]
+                            )
+                            ->order('price', $data['order'])
+                            ->setPageSize(10);
+                
+            } catch (\Exception $e) {
+                return false;
+            }
+            return $products;
+        }
 
     }
     

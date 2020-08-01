@@ -11,7 +11,6 @@
 
 
 <form class="product"
-      action="<?php echo $block->getFormAction(); ?>"
       id="prod-finder-form"
       method="post"
       data-hasrequired="<?php echo __('* Required Fields') ?>">
@@ -53,7 +52,7 @@
             <div class="control">
                 <select name="order" id="order">
 					<option value="asc" selected>Ascending</option>
-					<option value="dec">Descending</option>
+					<option value="desc">Descending</option>
 				</select>
             </div>
         </div>
@@ -72,15 +71,12 @@
 
 </form>
 
-<!-- To be Removed - part of the example I referenced -->
-<div class="note"></div>
-
 <!-- This is where dynamic results should display
 	 Below is static code with the styles/layout that I wish to use
 -->
 <div id="product-results">
 
-	<div class="product-details">
+	<!--<div class="product-details">
 		<a href="/dual-handle-cardio-ball.html">
 			<div class="item image">
 				<img src="/media/catalog/product/u/g/ug07-bk-0.jpg" />
@@ -401,7 +397,7 @@
 				</span>
 			</div>
 		</a>
-	</div>
+	</div>-->
 
 	
 
@@ -410,7 +406,7 @@
 
 
 <?php 
-	$ajaxurl = $block->getFormAction();
+	$ajaxurl = '/productfinder/ajax/search'
 ?>
 
 <!--

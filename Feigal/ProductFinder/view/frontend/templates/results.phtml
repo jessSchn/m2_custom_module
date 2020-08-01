@@ -1,0 +1,43 @@
+<?php
+	/*
+	 * @var $block Feigal\ProductFinder\Block\Results
+	 */
+	$products = $block->getProducts();
+?>
+
+<?php if($products && count($products) > 0): ?>
+	<?php foreach($products as $p): ?>
+
+		<div class="product-details">
+			<a href="<?php echo $p->getProductUrl(); ?>">
+				<div class="item image">
+					<img src="/medida/catalog/product/<?php echo $p->getProductImage(); ?>" />
+				</div>
+				<div class="item name">
+					<span class="info"><?php echo $p->getName(); ?></span>
+				</div>
+				<div class="item price">
+					<span class="info">$12.00</span>
+				</div>
+				<div class="item sku">
+					<span class="label">Sku:</span>
+					<span class="info"><?php echo $p->getSku(); ?></span>
+				</div>
+				<div class="item qty">
+					<span class="label">Quantity Available:</span>
+					<span class="info">100</span>
+				</div>		
+				<div class="item link">
+					<span class="info action primary">
+						View Product Details
+					</span>
+				</div>
+			</a>
+		</div>
+
+	<?php endforeach;?>
+<?php else: ?>
+
+	<div class="error">No products found.  Please adjust your search criteria above and try again.</div>
+
+<?php endif; ?>

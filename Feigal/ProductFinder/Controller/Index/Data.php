@@ -13,18 +13,7 @@
 	use Magento\Framework\Controller\Result\JsonFactory;
 
 	class Data extends Action
-	{
-
-		/*
-		 * I need to get the ajax values
-		 * lowprice
-		 * highprice
-		 * order
-		 *
-		 * then search for 10 products that meet the above values
-		 * send that collection to the block.
-		 */
-		
+	{	
 	    /* Calls new template - To be updated with something else */
 
 		public function execute() { 
