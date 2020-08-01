@@ -1,0 +1,395 @@
+<?php echo __('Use the form below to display a list of 10 products within the price range you have set. '); ?>
+
+<!-- Sample: https://www.codextblog.com/magento-2/make-ajax-call-magento-2-module/ -->
+
+<form class="product"
+      action="<?php echo $block->getFormAction(); ?>"
+      id="prod-finder-form"
+      method="post"
+      data-hasrequired="<?php echo __('* Required Fields') ?>">
+
+    <fieldset class="fieldset">
+        
+        <div class="field lowprice required">
+            <label class="label" for="lowprice"><span><?php echo __('Low Price') ?></span></label>
+            <div class="control">
+                <input type="number" name="lowprice" id="lowprice" placeholder="10.00" class="input-text" data-validate="{required:true}"/>
+            </div>
+        </div>
+        <div class="field highprice required">
+            <label class="label" for="highprice"><span><?php echo __('High Price') ?></span></label>
+            <div class="control">
+                <input type="number" name="highprice" id="highprice" placeholder="12.00" class="input-text"  data-validate="{required:true}"/>
+            </div>
+        </div>
+        <div class="field order">
+            <label class="label" for="order"><span><?php echo __('Sort Product Prices By') ?></span></label>
+            <div class="control">
+                <select name="order" id="order">
+					<option value="asc" selected>Ascending</option>
+					<option value="dec">Descending</option>
+				</select>
+            </div>
+        </div>
+        
+    </fieldset>
+    <div class="actions-toolbar">
+        <div class="primary">
+            <button type="submit" title="<?php echo __('Find Products') ?>" class="action submit primary">
+                <span><?php echo __('Find Products') ?></span>
+            </button>
+        </div>
+    </div>
+</form>
+
+<div class="note"></div>
+
+<div id="product-results">
+
+	<div class="product-details">
+		<a href="/dual-handle-cardio-ball.html">
+
+			<div class="item image">
+				<img src="/media/catalog/product/u/g/ug07-bk-0.jpg" />
+			</div>
+			
+			<div class="item name">
+				<span class="info">Dual Handle Cardio Ball</span>
+			</div>
+
+			<div class="item price">
+				<span class="info">$12.00</span>
+			</div>
+
+			<div class="item sku">
+				<span class="label">Sku:</span>
+				<span class="info">24-UG07</span>
+			</div>
+
+			<div class="item qty">
+				<span class="label">Quantity Available:</span>
+				<span class="info">100</span>
+			</div>		
+
+			<div class="item link">
+				<span class="info action primary">
+					View Product Details
+				</span>
+			</div>
+		</a>
+	</div>
+
+	<div class="product-details">
+		<a href="/dual-handle-cardio-ball.html">
+			<div class="item image">
+				<img src="/media/catalog/product/u/g/ug04-bk-0.jpg" />
+			</div>
+			
+			<div class="item name">
+				<span class="info">Zing Jump Rope</span>
+			</div>
+
+			<div class="item price">
+				<span class="info">$12.00</span>
+			</div>
+
+			<div class="item sku">
+				<span class="label">Sku:</span>
+				<span class="info">24-UG04</span>
+			</div>
+
+			<div class="item qty">
+				<span class="label">Quantity Available:</span>
+				<span class="info">100</span>
+			</div>
+
+			<div class="item link">
+				<span class="info action primary">
+					View Product Details
+				</span>
+			</div>
+		</a>
+	</div>
+
+	<div class="product-details">
+		<a href="/dual-handle-cardio-ball.html">
+			<div class="item image">
+				<img src="/media/catalog/product/m/p/mp06-gray_main_1.jpg" />
+			</div>
+			
+			<div class="item name">
+				<span class="info">Mirthra Warmup Pant</span>
+			</div>
+
+			<div class="item price">
+				<span class="info">$22.40</span>
+			</div>
+
+			<div class="item sku">
+				<span class="label">Sku:</span>
+				<span class="info">MP06</span>
+			</div>
+
+			<div class="item qty">
+				<span class="label">Quantity Available:</span>
+				<span class="info">0</span>
+			</div>
+
+			<div class="item link">
+				<span class="info action primary">
+					View Product Details
+				</span>
+			</div>
+		</a>
+	</div>
+
+	<div class="product-details">
+		<a href="/dual-handle-cardio-ball.html">
+
+			<div class="item image">
+				<img src="/media/catalog/product/u/g/ug07-bk-0.jpg" />
+			</div>
+			
+			<div class="item name">
+				<span class="info">Dual Handle Cardio Ball</span>
+			</div>
+
+			<div class="item price">
+				<span class="info">$12.00</span>
+			</div>
+
+			<div class="item sku">
+				<span class="label">Sku:</span>
+				<span class="info">24-UG07</span>
+			</div>
+
+			<div class="item qty">
+				<span class="label">Quantity Available:</span>
+				<span class="info">100</span>
+			</div>		
+
+			<div class="item link">
+				<span class="info action primary">
+					View Product Details
+				</span>
+			</div>
+		</a>
+	</div>
+
+	<div class="product-details">
+		<a href="/dual-handle-cardio-ball.html">
+			<div class="item image">
+				<img src="/media/catalog/product/u/g/ug04-bk-0.jpg" />
+			</div>
+			
+			<div class="item name">
+				<span class="info">Zing Jump Rope</span>
+			</div>
+
+			<div class="item price">
+				<span class="info">$12.00</span>
+			</div>
+
+			<div class="item sku">
+				<span class="label">Sku:</span>
+				<span class="info">24-UG04</span>
+			</div>
+
+			<div class="item qty">
+				<span class="label">Quantity Available:</span>
+				<span class="info">100</span>
+			</div>
+
+			<div class="item link">
+				<span class="info action primary">
+					View Product Details
+				</span>
+			</div>
+		</a>
+	</div>
+
+	<div class="product-details">
+		<a href="/dual-handle-cardio-ball.html">
+
+			<div class="item image">
+				<img src="/media/catalog/product/u/g/ug07-bk-0.jpg" />
+			</div>
+			
+			<div class="item name">
+				<span class="info">Dual Handle Cardio Ball</span>
+			</div>
+
+			<div class="item price">
+				<span class="info">$12.00</span>
+			</div>
+
+			<div class="item sku">
+				<span class="label">Sku:</span>
+				<span class="info">24-UG07</span>
+			</div>
+
+			<div class="item qty">
+				<span class="label">Quantity Available:</span>
+				<span class="info">100</span>
+			</div>		
+
+			<div class="item link">
+				<span class="info action primary">
+					View Product Details
+				</span>
+			</div>
+		</a>
+	</div>
+
+	<div class="product-details">
+		<a href="/dual-handle-cardio-ball.html">
+			<div class="item image">
+				<img src="/media/catalog/product/u/g/ug04-bk-0.jpg" />
+			</div>
+			
+			<div class="item name">
+				<span class="info">Zing Jump Rope</span>
+			</div>
+
+			<div class="item price">
+				<span class="info">$12.00</span>
+			</div>
+
+			<div class="item sku">
+				<span class="label">Sku:</span>
+				<span class="info">24-UG04</span>
+			</div>
+
+			<div class="item qty">
+				<span class="label">Quantity Available:</span>
+				<span class="info">100</span>
+			</div>
+
+			<div class="item link">
+				<span class="info action primary">
+					View Product Details
+				</span>
+			</div>
+		</a>
+	</div>
+
+	<div class="product-details">
+		<a href="/dual-handle-cardio-ball.html">
+			<div class="item image">
+				<img src="/media/catalog/product/m/p/mp06-gray_main_1.jpg" />
+			</div>
+			
+			<div class="item name">
+				<span class="info">Mirthra Warmup Pant</span>
+			</div>
+
+			<div class="item price">
+				<span class="info">$22.40</span>
+			</div>
+
+			<div class="item sku">
+				<span class="label">Sku:</span>
+				<span class="info">MP06</span>
+			</div>
+
+			<div class="item qty">
+				<span class="label">Quantity Available:</span>
+				<span class="info">0</span>
+			</div>
+
+			<div class="item link">
+				<span class="info action primary">
+					View Product Details
+				</span>
+			</div>
+		</a>
+	</div>
+
+	<div class="product-details">
+		<a href="/dual-handle-cardio-ball.html">
+
+			<div class="item image">
+				<img src="/media/catalog/product/u/g/ug07-bk-0.jpg" />
+			</div>
+			
+			<div class="item name">
+				<span class="info">Dual Handle Cardio Ball</span>
+			</div>
+
+			<div class="item price">
+				<span class="info">$12.00</span>
+			</div>
+
+			<div class="item sku">
+				<span class="label">Sku:</span>
+				<span class="info">24-UG07</span>
+			</div>
+
+			<div class="item qty">
+				<span class="label">Quantity Available:</span>
+				<span class="info">100</span>
+			</div>		
+
+			<div class="item link">
+				<span class="info action primary">
+					View Product Details
+				</span>
+			</div>
+		</a>
+	</div>
+
+	<div class="product-details">
+		<a href="/dual-handle-cardio-ball.html">
+			<div class="item image">
+				<img src="/media/catalog/product/u/g/ug04-bk-0.jpg" />
+			</div>
+			
+			<div class="item name">
+				<span class="info">Zing Jump Rope</span>
+			</div>
+
+			<div class="item price">
+				<span class="info">$12.00</span>
+			</div>
+
+			<div class="item sku">
+				<span class="label">Sku:</span>
+				<span class="info">24-UG04</span>
+			</div>
+
+			<div class="item qty">
+				<span class="label">Quantity Available:</span>
+				<span class="info">100</span>
+			</div>
+
+			<div class="item link">
+				<span class="info action primary">
+					View Product Details
+				</span>
+			</div>
+		</a>
+	</div>
+
+	
+
+</div>
+
+
+
+<?php 
+	$ajaxurl = $block->getFormAction();
+?>
+
+<!--
+Under the script tag, we are passing one paramater to our js file. 
+AjaxUrl which is the URL of the controller (in our case it should be productfinder/index/test) from where we will return a JSON response
+-->
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Feigal_ProductFinder/js/productfinder": {
+                "AjaxUrl": "<?php echo $ajaxurl; ?>"
+            }
+        }
+    }
+</script>

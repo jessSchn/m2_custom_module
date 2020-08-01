@@ -1,0 +1,17 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+<update handle="customer_account"/> 
+<head>
+	<css src="Feigal_ProductFinder::css/partfinder.css" />
+</head>
+<body> 
+    <referenceBlock name="page.main.title"> 
+            <action method="setPageTitle"> 
+                <argument translate="true" name="title" xsi:type="string">ProductFinder</argument> 
+            </action> 
+     </referenceBlock> 
+     <referenceContainer name="content"> 
+        <block class="Magento\Framework\View\Element\Template" name="product_finder" template="Feigal_ProductFinder::productfinder.phtml"> 
+        </block> 
+    </referenceContainer> 
+</body> 
+</page>
