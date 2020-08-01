@@ -1,6 +1,14 @@
+<?php 
+	/*
+	 * PartFinder Page
+	 * Created by Jessica Feigal <mrs.feigal@gmail.com>
+	 * Date: 7/29/2020
+	 * Example: https://www.codextblog.com/magento-2/make-ajax-call-magento-2-module/
+	 */
+?>
+
 <?php echo __('Use the form below to display a list of 10 products within the price range you have set. '); ?>
 
-<!-- Sample: https://www.codextblog.com/magento-2/make-ajax-call-magento-2-module/ -->
 
 <form class="product"
       action="<?php echo $block->getFormAction(); ?>"
@@ -11,19 +19,37 @@
     <fieldset class="fieldset">
         
         <div class="field lowprice required">
-            <label class="label" for="lowprice"><span><?php echo __('Low Price') ?></span></label>
+            <label class="label" for="lowprice">
+            	<span><?php echo __('Low Price') ?></span>
+            </label>
             <div class="control">
-                <input type="number" name="lowprice" id="lowprice" placeholder="10.00" class="input-text" data-validate="{required:true}"/>
+                <input type="number" 
+                	   name="lowprice" 
+                	   id="lowprice" 
+                	   placeholder="10.00" 
+                	   class="input-text" 
+                	   data-validate="{required:true}"/>
             </div>
         </div>
+
         <div class="field highprice required">
-            <label class="label" for="highprice"><span><?php echo __('High Price') ?></span></label>
+            <label class="label" for="highprice">
+            	<span><?php echo __('High Price') ?></span>
+            </label>
             <div class="control">
-                <input type="number" name="highprice" id="highprice" placeholder="12.00" class="input-text"  data-validate="{required:true}"/>
+                <input type="number" 
+                	   name="highprice" 
+                	   id="highprice" 
+                	   placeholder="12.00" 
+                	   class="input-text"  
+                	   data-validate="{required:true}"/>
             </div>
         </div>
+
         <div class="field order">
-            <label class="label" for="order"><span><?php echo __('Sort Product Prices By') ?></span></label>
+            <label class="label" for="order">
+            	<span><?php echo __('Sort Product Prices By') ?></span>
+            </label>
             <div class="control">
                 <select name="order" id="order">
 					<option value="asc" selected>Ascending</option>
@@ -33,22 +59,29 @@
         </div>
         
     </fieldset>
+
     <div class="actions-toolbar">
         <div class="primary">
-            <button type="submit" title="<?php echo __('Find Products') ?>" class="action submit primary">
+            <button type="submit" 
+            		title="<?php echo __('Find Products') ?>" 
+            		class="action submit primary">
                 <span><?php echo __('Find Products') ?></span>
             </button>
         </div>
     </div>
+
 </form>
 
+<!-- To be Removed - part of the example I referenced -->
 <div class="note"></div>
 
+<!-- This is where dynamic results should display
+	 Below is static code with the styles/layout that I wish to use
+-->
 <div id="product-results">
 
 	<div class="product-details">
 		<a href="/dual-handle-cardio-ball.html">
-
 			<div class="item image">
 				<img src="/media/catalog/product/u/g/ug07-bk-0.jpg" />
 			</div>
@@ -382,7 +415,9 @@
 
 <!--
 Under the script tag, we are passing one paramater to our js file. 
-AjaxUrl which is the URL of the controller (in our case it should be productfinder/index/test) from where we will return a JSON response
+AjaxUrl which is the URL of the controller (
+in our case it should be productfinder/index/data) 
+from where we will return a JSON response
 -->
 <script type="text/x-magento-init">
     {
