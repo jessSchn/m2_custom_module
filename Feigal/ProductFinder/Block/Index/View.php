@@ -13,7 +13,6 @@
      
     class View extends Template
     {
-
         
         protected $product_collection;
     
@@ -29,9 +28,8 @@
         /**
          * @return $prodcuts
          */
-        public function getProducts()
+        public function getProducts($data)
         {
-            $data = $this->getRequest()->getParams(); //ajax data
             try 
                 $products = $this->product_collection->create()
                             ->addAttributeToFilter('price', [
@@ -48,3 +46,4 @@
         }
 
     }
+    

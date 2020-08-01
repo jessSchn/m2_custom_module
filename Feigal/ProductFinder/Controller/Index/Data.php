@@ -14,7 +14,6 @@
 
 	class Data extends Action
 	{	
-	    /* Calls new template - To be updated with something else */
 
 		public function execute() { 
 	  

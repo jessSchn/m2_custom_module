@@ -1,3 +1,10 @@
+/*
+ * PartFinder Controller
+ * Created by Jessica Feigal <mrs.feigal@gmail.com>
+ * Date: 7/29/2020
+ * Example: https://www.codextblog.com/magento-2/make-ajax-call-magento-2-module/
+ */
+
 define([
     "jquery",
     "jquery/ui"
