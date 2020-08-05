@@ -34,8 +34,14 @@ class View extends Template
     public function getProducts()
     {
         $data = $this->getRequest()->getParams();
+
+        if (($data['lowprice'] > $data['highprice']) || ($data['highprice'] > ($data['lowprice'] * 5))) {
+            return false;
+        }
+
         try {
             $products = $this->product_collection->create()
+                             ->addAttributeToSelect('*')
                              ->addAttributeToFilter('price', ['gteq' => $data['lowprice']])
                              ->addAttributeToFilter('price', ['lteq' => $data['highprice']])
                              ->setOrder('price', $data['order'])
@@ -44,6 +50,7 @@ class View extends Template
         } catch (\Exception $e) {
             return false;
         }
+
         return $products;
     }
 
