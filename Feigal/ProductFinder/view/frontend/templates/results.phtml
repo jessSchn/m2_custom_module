@@ -9,15 +9,16 @@
 	<?php foreach($products as $p): ?>
 
 		<div class="product-details">
-			<a href="<?php echo $p->getProductUrl(); ?>">
 				<div class="item image">
-					<img src="/medida/catalog/product/<?php echo $p->getProductImage(); ?>" />
+                    <a href="<?php echo $p->getProductUrl(); ?>">
+                        <img src="/medida/catalog/product/<?php echo $p->getProductImage(); ?>" />
+                    </a>
 				</div>
 				<div class="item name">
 					<span class="info"><?php echo $p->getName(); ?></span>
 				</div>
 				<div class="item price">
-					<span class="info">$12.00</span>
+					<span class="info">$<?php echo number_format($p->getPrice(), 2); ?></span>
 				</div>
 				<div class="item sku">
 					<span class="label">Sku:</span>
@@ -25,12 +26,14 @@
 				</div>
 				<div class="item qty">
 					<span class="label">Quantity Available:</span>
-					<span class="info">100</span>
+					<span class="info"><?php echo $block->getStock($p->getId()); ?></span>
 				</div>		
 				<div class="item link">
-					<span class="info action primary">
-						View Product Details
-					</span>
+                    <a href="<?php echo $p->getProductUrl(); ?>">
+                        <span class="info action primary">
+                            View Product Details
+                        </span>
+                    </a>
 				</div>
 			</a>
 		</div>
